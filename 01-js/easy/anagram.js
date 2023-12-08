@@ -6,8 +6,7 @@
 
 
 function isAnagram(str1, str2) {
-    //if(typeof str1 === "string" && typeof str2 === "string"){
-      function getAllPermutations(str){
+      function getAllPermutations(str){//This function is generating all the possible permutations of a string 
         if(str.length <= 1){
       
           return [str];
@@ -25,17 +24,13 @@ function isAnagram(str1, str2) {
         return permutations;
       }
       const permArray = getAllPermutations(str1.toLowerCase());
-      //console.log(permArray);
       for (let i of permArray) {
-        if (i===str2.toLowerCase()) {
+        if (i===str2.toLowerCase()) {//Comparing all the permutations with the second string
           return true;
         }
       }
       return false;
-   // }else{
-//return "Invalid input";
-   // }
 }
-console.log(isAnagram('hello!','llohe'));
+//console.log(isAnagram('hello!','llohe'));
 module.exports = isAnagram;
 
