@@ -4,7 +4,17 @@
 */
 
 function isPalindrome(str) {
-  return true;
-}
+  
+  //Checking if the string is empty or not
+  if(str===''){return true};      
+  
+  ///copying the original variable
+  const org=str;       
 
+  //converting the original string to lowercase and eliminating any punctuation and spaces.
+  const val=(org.toLowerCase().split('').filter((item1)=>(item1!==' ' && item1!=='/' && item1!=='!' && item1!=='.' && item1!==',' && item1!=='?' )).reduce((item1,item2)=>{return item1+item2}));  
+
+  //doing the same but with reversing the array
+  if((str.toLowerCase().split('').reverse().filter((item1)=>(item1!==' ' && item1!=='/' && item1!=='!' && item1!=='.' && item1!==',' && item1!=='?' )).reduce((item1,item2)=>{return item1+item2})) === val){return true;}else{return false;} 
+}
 module.exports = isPalindrome;
